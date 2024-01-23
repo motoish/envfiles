@@ -1,0 +1,211 @@
+{
+    "folders": [
+        {
+            "path": "../repository/devtools"
+        },
+        {
+            "path": "../repository/global-ip-checker"
+        }
+    ],
+    "settings": {
+        "workbench.preferredDarkColorTheme": "One Dark Pro Flat",
+        "workbench.preferredHighContrastColorTheme": "One Dark Pro Flat",
+        "workbench.preferredHighContrastLightColorTheme": "One Dark Pro Flat",
+        "workbench.preferredLightColorTheme": "One Dark Pro Flat",
+        "apc.electron": {
+            "frame": false,
+            "opacity": 0.98
+        },
+        "cSpell.words": [
+            "Milion"
+        ],
+        "workbench.tree.enableStickyScroll": true,
+        "editor.guides.bracketPairs": "active",
+        "editor.cursorSmoothCaretAnimation": "on",
+        "editor.stickyScroll.enabled": true
+    },
+    "launch": {
+        "configurations": [
+            {
+                "type": "aws-sam",
+                "request": "direct-invoke",
+                "name": "lambda-nodejs18.x:HelloWorldFunction",
+                "invokeTarget": {
+                    "target": "template",
+                    "templatePath": "lambda-nodejs18.x/template.yaml",
+                    "logicalId": "HelloWorldFunction"
+                },
+                "lambda": {
+                    "payload": {},
+                    "environmentVariables": {},
+                    "runtime": "nodejs18.x"
+                }
+            },
+            {
+                "type": "aws-sam",
+                "request": "direct-invoke",
+                "name": "API lambda-nodejs18.x:HelloWorldFunction",
+                "invokeTarget": {
+                    "target": "api",
+                    "templatePath": "lambda-nodejs18.x/template.yaml",
+                    "logicalId": "HelloWorldFunction"
+                },
+                "api": {
+                    "path": "/hello",
+                    "httpMethod": "get",
+                    "payload": {
+                        "json": {}
+                    }
+                },
+                "lambda": {
+                    "runtime": "nodejs18.x"
+                }
+            },
+            {
+                "type": "aws-sam",
+                "request": "direct-invoke",
+                "name": "sam-nodejs18.x:HelloWorldFunction",
+                "invokeTarget": {
+                    "target": "template",
+                    "templatePath": "sam-nodejs18.x/template.yaml",
+                    "logicalId": "HelloWorldFunction"
+                },
+                "lambda": {
+                    "payload": {},
+                    "environmentVariables": {},
+                    "runtime": "nodejs18.x"
+                }
+            },
+            {
+                "type": "aws-sam",
+                "request": "direct-invoke",
+                "name": "API sam-nodejs18.x:HelloWorldFunction",
+                "invokeTarget": {
+                    "target": "api",
+                    "templatePath": "sam-nodejs18.x/template.yaml",
+                    "logicalId": "HelloWorldFunction"
+                },
+                "api": {
+                    "path": "/hello",
+                    "httpMethod": "get",
+                    "payload": {
+                        "json": {}
+                    }
+                },
+                "lambda": {
+                    "runtime": "nodejs18.x"
+                }
+            },
+            {
+                "type": "aws-sam",
+                "request": "direct-invoke",
+                "name": "lambda-nodejs18.x:StockTradingStateMachine",
+                "invokeTarget": {
+                    "target": "template",
+                    "templatePath": "lambda-nodejs18.x/template.yaml",
+                    "logicalId": "StockTradingStateMachine"
+                },
+                "lambda": {
+                    "payload": {},
+                    "environmentVariables": {},
+                    "runtime": "nodejs18.x"
+                }
+            },
+            {
+                "type": "aws-sam",
+                "request": "direct-invoke",
+                "name": "lambda-nodejs18.x:StockCheckerFunction (nodejs18.x)",
+                "invokeTarget": {
+                    "target": "template",
+                    "templatePath": "lambda-nodejs18.x/template.yaml",
+                    "logicalId": "StockCheckerFunction"
+                },
+                "lambda": {
+                    "payload": {},
+                    "environmentVariables": {},
+                    "runtime": "nodejs18.x"
+                }
+            },
+            {
+                "type": "aws-sam",
+                "request": "direct-invoke",
+                "name": "lambda-nodejs18.x:StockSellerFunction (nodejs18.x)",
+                "invokeTarget": {
+                    "target": "template",
+                    "templatePath": "lambda-nodejs18.x/template.yaml",
+                    "logicalId": "StockSellerFunction"
+                },
+                "lambda": {
+                    "payload": {},
+                    "environmentVariables": {},
+                    "runtime": "nodejs18.x"
+                }
+            },
+            {
+                "type": "aws-sam",
+                "request": "direct-invoke",
+                "name": "lambda-nodejs18.x:StockBuyerFunction (nodejs18.x)",
+                "invokeTarget": {
+                    "target": "template",
+                    "templatePath": "lambda-nodejs18.x/template.yaml",
+                    "logicalId": "StockBuyerFunction"
+                },
+                "lambda": {
+                    "payload": {},
+                    "environmentVariables": {},
+                    "runtime": "nodejs18.x"
+                }
+            },
+            {
+                "type": "aws-sam",
+                "request": "direct-invoke",
+                "name": "lambda-nodejs18.x:TransactionTable",
+                "invokeTarget": {
+                    "target": "template",
+                    "templatePath": "lambda-nodejs18.x/template.yaml",
+                    "logicalId": "TransactionTable"
+                },
+                "lambda": {
+                    "payload": {},
+                    "environmentVariables": {},
+                    "runtime": "nodejs18.x"
+                }
+            },
+            {
+                "type": "aws-sam",
+                "request": "direct-invoke",
+                "name": "lambda-nodejs18.x:HelloWorldFunction",
+                "invokeTarget": {
+                    "target": "template",
+                    "templatePath": "lambda-nodejs18.x/template.yaml",
+                    "logicalId": "HelloWorldFunction"
+                },
+                "lambda": {
+                    "payload": {},
+                    "environmentVariables": {},
+                    "runtime": "nodejs18.x"
+                }
+            },
+            {
+                "type": "aws-sam",
+                "request": "direct-invoke",
+                "name": "API lambda-nodejs18.x:HelloWorldFunction",
+                "invokeTarget": {
+                    "target": "api",
+                    "templatePath": "lambda-nodejs18.x/template.yaml",
+                    "logicalId": "HelloWorldFunction"
+                },
+                "api": {
+                    "path": "/hello",
+                    "httpMethod": "get",
+                    "payload": {
+                        "json": {}
+                    }
+                },
+                "lambda": {
+                    "runtime": "nodejs18.x"
+                }
+            }
+        ]
+    }
+}
