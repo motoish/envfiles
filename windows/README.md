@@ -11,3 +11,9 @@ winget install --id=DEVCOM.JetBrainsMonoNerdFont  -e
 ```cmd
 winget install --id=direnv.direnv  -e
 ```
+
+## Install Starship with winget
+
+```cmd
+winget install --id Starship.Starship
+```
