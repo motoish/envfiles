@@ -1,0 +1,25 @@
+{{- if eq .chezmoi.os "windows" }}
+$ErrorActionPreference = "Stop"
+
+function Install-WingetPackage {
+    param([Parameter(Mandatory = $true)][string] $Id)
+
+    $installed = winget list --id $Id --exact --accept-source-agreements 2>$null
+    if ($installed -notmatch [regex]::Escape($Id)) {
+        winget install --id $Id --exact --accept-source-agreements --accept-package-agreements
+    }
+}
+
+if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
+    throw "winget is required to install the configured packages."
+}
+
+Install-WingetPackage "DEVCOM.JetBrainsMonoNerdFont"
+Install-WingetPackage "Git.Git"
+Install-WingetPackage "Microsoft.VisualStudioCode"
+Install-WingetPackage "Neovim.Neovim"
+Install-WingetPackage "Starship.Starship"
+Install-WingetPackage "Vercel.Hyper"
+Install-WingetPackage "direnv.direnv"
+Install-WingetPackage "Microsoft.WindowsTerminal"
+{{- end }}

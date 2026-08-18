@@ -1,0 +1,22 @@
+README.md
+docs/
+bootstrap-macos.sh
+bootstrap-windows.ps1
+.chezmoidata.toml
+.gitignore
+.git/
+mac/
+windows/
+
+{{- if ne .chezmoi.os "darwin" }}
+Library/
+dot_config/karabiner/
+dot_config/nvim/
+dot_zshrc
+run_onchange_install-packages.sh.tmpl
+{{- end }}
+
+{{- if ne .chezmoi.os "windows" }}
+AppData/
+run_onchange_install-packages.ps1.tmpl
+{{- end }}

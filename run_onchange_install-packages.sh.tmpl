@@ -1,0 +1,31 @@
+{{- if eq .chezmoi.os "darwin" }}
+#!/bin/sh
+set -eu
+
+install_formula() {
+  if ! brew list --formula "$1" >/dev/null 2>&1; then
+    brew install "$1"
+  fi
+}
+
+install_cask() {
+  if ! brew list --cask "$1" >/dev/null 2>&1; then
+    brew install --cask "$1"
+  fi
+}
+
+if ! command -v brew >/dev/null 2>&1; then
+  echo "Homebrew is required. Run bootstrap-macos.sh first." >&2
+  exit 1
+fi
+
+install_formula chezmoi
+install_formula direnv
+install_formula git
+install_formula neovim
+install_formula starship
+install_cask font-jetbrains-mono-nerd-font
+install_cask hyper
+install_cask karabiner-elements
+install_cask visual-studio-code
+{{- end }}

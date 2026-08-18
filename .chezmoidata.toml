@@ -1,0 +1,5 @@
+# Paths are relative to the user's home directory and are expanded by VS Code.
+workspace_folders = [
+  "repository/devtools",
+  "repository/global-ip-checker",
+]

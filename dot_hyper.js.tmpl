@@ -1,0 +1,5 @@
+{{- if eq .chezmoi.os "darwin" }}
+{{ template "hyper/darwin.js" . }}
+{{- else if eq .chezmoi.os "windows" }}
+{{ template "hyper/windows.js" . }}
+{{- end }}
