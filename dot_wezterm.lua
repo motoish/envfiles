@@ -13,7 +13,8 @@ config.initial_rows = 38
 
 -- 主题
 -- config.color_scheme = 'Adventure Time (Gogh)'
-config.color_scheme = "Gruvbox dark, hard (base16)"
+-- config.color_scheme = "Gruvbox dark, hard (base16)"
+config.color_scheme = "kanagawabones"
 -- config.colors = {
 --   tab_bar = {
 --     -- 整条 Tab Bar 背景
