@@ -93,35 +93,42 @@ config.keys = {
 			confirm = true,
 		}),
 	},
+
+	-- 切换全屏
+	{
+		key = "f",
+		mods = "CTRL|CMD",
+		action = act.ToggleFullScreen,
+	},
 }
 
 -- 默认文件夹
 -- config.default_cwd = wezterm.home_dir .. "/repository"
 
-local public_ip = "..."
-local last_ip_update = 0
-
-wezterm.on("update-status", function(window, pane)
-	local now = os.time()
-
-	-- 每 5 分钟更新一次公网 IP
-	if now - last_ip_update > 300 then
-		local success, stdout = wezterm.run_child_process({
-			"curl",
-			"-fsS",
-			"https://api.ipify.org",
-		})
-
-		if success then
-			public_ip = stdout:gsub("%s+", "")
-		else
-			public_ip = "offline"
-		end
-
-		last_ip_update = now
-	end
-
-	window:set_right_status(string.format("  %s  ", public_ip))
-end)
+-- local public_ip = "..."
+-- local last_ip_update = 0
+--
+-- wezterm.on("update-status", function(window, pane)
+-- 	local now = os.time()
+--
+-- 	-- 每 5 分钟更新一次公网 IP
+-- 	if now - last_ip_update > 300 then
+-- 		local success, stdout = wezterm.run_child_process({
+-- 			"curl",
+-- 			"-fsS",
+-- 			"https://api.ipify.org",
+-- 		})
+--
+-- 		if success then
+-- 			public_ip = stdout:gsub("%s+", "")
+-- 		else
+-- 			public_ip = "offline"
+-- 		end
+--
+-- 		last_ip_update = now
+-- 	end
+--
+-- 	window:set_right_status(string.format("  %s  ", public_ip))
+-- end)
 
 return config
