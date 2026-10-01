@@ -3,6 +3,24 @@ local act = wezterm.action
 
 local config = wezterm.config_builder()
 
+config.mouse_bindings = {
+	{
+		event = { Up = { streak = 1, button = "Left" } },
+		mods = "NONE",
+		action = act.Nop,
+	},
+	{
+		event = { Up = { streak = 2, button = "Left" } },
+		mods = "NONE",
+		action = act.Nop,
+	},
+	{
+		event = { Up = { streak = 3, button = "Left" } },
+		mods = "NONE",
+		action = act.Nop,
+	},
+}
+
 -- 字体
 config.font = wezterm.font("JetBrains Mono")
 config.font_size = 14
@@ -80,8 +98,10 @@ config.keys = {
 	{
 		key = "d",
 		mods = "CMD|SHIFT",
-		action = act.SplitVertical({
-			domain = "CurrentPaneDomain",
+		action = act.SplitPane({
+			direction = "Down",
+			size = { Percent = 35 },
+			command = { domain = "CurrentPaneDomain" },
 		}),
 	},
 
